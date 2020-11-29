@@ -5,9 +5,7 @@ import { useSafeArea } from 'react-native-safe-area-context';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Playlists from './components/Playlists';
 import Members from './components/Members';
-import ScoreKeeper from './components/ScoreKeeper';
-import ScoreKeeperControls from './components/ScoreKeeperControls';
-import BlinkApp from './components/stateManagement';
+import KeepScore from './components/score';
 import ActivityIndicatorExample from './Examples/ActivityIndicatorExample';
 import AppbarExample from './Examples/AppbarExample';
 import AvatarExample from './Examples/AvatarExample';
@@ -43,10 +41,10 @@ export const menus: Record<
   React.ComponentType<any> & { title: string }
 > = {
   // activityIndicator: ActivityIndicatorExample,
-  button: ScoreKeeper,
+  button: KeepScore,
   card: Playlists,
   avatar: Members,
-  stateDemo:BlinkApp,
+  // examplebutton: ButtonExample,
   
   // badge: BadgeExample,
   // banner: BannerExample,

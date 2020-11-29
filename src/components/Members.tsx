@@ -35,7 +35,7 @@ const Members = () => {
   );
 };
 
-Members.title = 'Members';
+Members.title = 'Insta';
 
 const styles = StyleSheet.create({
   container: {
