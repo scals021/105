@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "105",
+    "slug": "snack-35cd450e-3a6a-499b-b632-0dd368e9db3b",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "description": "callstack/react-native-paper @ Nov 8, 2018"
+  }
+}
