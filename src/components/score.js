@@ -47,8 +47,7 @@ class Counter extends React.Component {
         });
     return (
        <ScrollView
-      style={[styles.container]}
-    >
+      style={[styles.container]}>
       <View style={[styles.bg]}>
       <List.Section title="The Downs ... 105 ">
       <Text style={styles2.redscoreStyle}>Red: {redScore}</Text>       
@@ -69,7 +68,7 @@ class Counter extends React.Component {
           </List.Section>
            <Text style={styles2.blueScoreStyle}>Blue: {blueScore}</Text> 
            <View style={styles.row}>           
- <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(1)}} mode =               "contained">
+           <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(1)}} mode =               "contained">
           +1
           </Button>
           <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(5)}} mode =               "contained">
@@ -89,7 +88,7 @@ class Counter extends React.Component {
           ResetGame
           </Button></View>
       </View></ScrollView>
-    );
+    )
   }
 }
 
