@@ -35,7 +35,7 @@ const Members = () => {
   );
 };
 
-Members.title = 'Insta';
+Members.title = 'Cool lists do cool things';
 
 const styles = StyleSheet.create({
   container: {

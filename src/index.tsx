@@ -7,10 +7,11 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import {
   Provider as PaperProvider,
   DarkTheme,
-  DefaultTheme,
+  // DefaultTheme,
   Theme,
 } from 'react-native-paper';
 import App from './RootNavigator';
+import DefaultTheme from  '../assets/styles/DefaultTheme';
 import DrawerItems from './DrawerItems';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -37,6 +38,7 @@ const DrawerContent = () => {
 };
 
 const Drawer = createDrawerNavigator<{ Home: undefined }>();
+
 
 export default function PaperExample() {
   useKeepAwake();

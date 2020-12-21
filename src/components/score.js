@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { ScrollView, Image } from 'react-native';
 import { Button, List, useTheme } from 'react-native-paper';
 
+
 // TODO: Abstract Score Keeping
 // TODO: Learn Horizontal Screen Mode
 // TODO: Add BLue 
@@ -12,11 +13,12 @@ import { Button, List, useTheme } from 'react-native-paper';
 
 
 class Counter extends React.Component {
-  state = { redScore: 0, blueScore:0 };
+  state = { redScore: 0, blueScore:0, redScoreHistory: [], blueScoreHistory:[] };
 
   incramentScoreRed = (num) => this.setState(
     prevState => ({ ...prevState, redScore: this.state.redScore + num })
   )
+  
   incramentScoreBlue = (num) => this.setState(
     prevState => ({ ...prevState, blueScore: this.state.blueScore + num })
   )
@@ -27,6 +29,8 @@ class Counter extends React.Component {
   
   render() {
     const { redScore } = this.state;
+    const { redScoreHistory } = this.state;
+    const { Blu } = this.state;
     const { blueScore } = this.state;
     const styles = StyleSheet.create({
         container: {
@@ -42,15 +46,16 @@ class Counter extends React.Component {
         }});
     // const { colors } = useTheme();
     const styles2 = StyleSheet.create({
-        redscoreStyle: { fontSize: 25, color: '#ff0000', fontWeight: 'bold' },
-        blueScoreStyle: { fontSize: 25, color: '#0000ff', fontWeight: 'bold' }
+        redscoreStyle: { fontSize: 25, color: '#FF6700', fontWeight: 'bold' },
+        blueScoreStyle: { fontSize: 25, color: '#04d9ff', fontWeight: 'bold' }
         });
     return (
        <ScrollView
       style={[styles.container]}>
       <View style={[styles.bg]}>
-      <List.Section title="The Downs ... 105 ">
-      <Text style={styles2.redscoreStyle}>Red: {redScore}</Text>       
+      <List.Section >
+      <Text style={styles2.redscoreStyle}>Orange: {redScore}</Text>   
+      <Text> {redScoreHistory} </Text>    
       <View style={styles.row}>   
       <Button style={styles.button} onPress={ () => {this.incramentScoreRed(1)}} mode =               "contained">
           +1
@@ -63,6 +68,9 @@ class Counter extends React.Component {
           </Button>
            <Button style={styles.button} onPress={ () => {this.incramentScoreRed(20)}} mode =               "contained">
           +20
+          </Button>
+          <Button style={styles.button} onPress={ () => {this.incramentScoreRed(-1)}} mode =               "contained">
+          -1
           </Button>
           </View>
           </List.Section>
@@ -86,7 +94,9 @@ class Counter extends React.Component {
           <View style={[styles.bg]} height={100}>
            <Button style={styles.button} onPress={this.resetCount} mode =               "outlined">
           ResetGame
-          </Button></View>
+          </Button>
+      
+          </View>
       </View></ScrollView>
     )
   }
