@@ -88,6 +88,9 @@ class Counter extends React.Component {
            <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(20)}} mode =               "contained">
           +20
           </Button>
+           <Button style={styles.button} onPress={ () => {this.incramentScoreRed(-1)}} mode =               "contained">
+          -1
+          </Button>
           </View>
 
 

@@ -8,17 +8,25 @@ import {
   IconButton,
   useTheme,
 } from 'react-native-paper';
+import { WebView } from 'react-native-webview';
+import Iframe from 'react-iframe'
 
 const Playlists = () => {
   const {
     colors: { background },
   } = useTheme();
 
+const iframeString2 = '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1031034793&color=%23161828&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/bigbootiemix" title="Two Friends Big Bootie Mix" target="_blank" style="color: #cccccc; text-decoration: none;">Two Friends Big Bootie Mix</a> · <a href="https://soundcloud.com/bigbootiemix/sets/two-friends-big-bootie-mixes" title="Two Friends Big Bootie Mixes" target="_blank" style="color: #cccccc; text-decoration: none;">Two Friends Big Bootie Mixes</a></div>'
+
+const iframeString = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1031034793&color=%23161828&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+
   return (
     <ScrollView
       style={[styles.container, { backgroundColor: background }]}
       contentContainerStyle={styles.content}
     >
+  
+ 
       <Card style={styles.card}>
         <Card.Cover source={require('../../assets/images/wrecked-ship.jpg')} />
         <Card.Title title="Abandoned Ship" />
@@ -32,71 +40,25 @@ const Playlists = () => {
         </Card.Content>
       </Card>
       <Card style={styles.card}>
-        <Card.Cover source={require('../../assets/images/forest.jpg')} />
+        <Card.Cover source={iframeString} />
+        <Card.Content>
+        <Iframe  url="http://www.youtube.com/embed/xDMP3i36naA"
+    width="450px"
+    height="450px"
+    id="myId"
+    className="myClassname"
+    display="initial"
+    position="relative"
+    allowFullScreen/>
+
+        <Paragraph>
+        {iframeString}
+        </Paragraph>
+        </Card.Content>
         <Card.Actions>
           <Button onPress={() => {}}>Share</Button>
           <Button onPress={() => {}}>Explore</Button>
         </Card.Actions>
-      </Card>
-      <Card style={styles.card}>
-        <Card.Title
-          title="Berries that are trimmed at the end"
-          subtitle="Omega Ruby"
-          left={(props: any) => <Avatar.Icon {...props} icon="folder" />}
-          right={(props: any) => (
-            <IconButton {...props} icon="dots-vertical" onPress={() => {}} />
-          )}
-        />
-        <Card.Content>
-          <Paragraph>
-            Dotted around the Hoenn region, you will find loamy soil, many of
-            which are housing berries. Once you have picked the berries, then
-            you have the ability to use that loamy soil to grow your own
-            berries. These can be any berry and will require attention to get
-            the best crop.
-          </Paragraph>
-        </Card.Content>
-      </Card>
-      <Card style={styles.card}>
-        <Card.Cover source={require('../../assets/images/strawberries.jpg')} />
-        <Card.Title
-          title="Just Strawberries"
-          subtitle="... and only Strawberries"
-          right={(props: any) => (
-            <IconButton {...props} icon="chevron-down" onPress={() => {}} />
-          )}
-        />
-      </Card>
-      <Card
-        style={styles.card}
-        onPress={() => {
-          Alert.alert('The Chameleon is Pressed');
-        }}
-      >
-        <Card.Cover source={require('../../assets/images/chameleon.jpg')} />
-        <Card.Title title="Pressable Chameleon" />
-        <Card.Content>
-          <Paragraph>
-            This is a pressable chameleon. If you press me, I will alert.
-          </Paragraph>
-        </Card.Content>
-      </Card>
-      <Card
-        style={styles.card}
-        onLongPress={() => {
-          Alert.alert('The City is Long Pressed');
-        }}
-      >
-        <Card.Cover source={require('../../assets/images/city.jpg')} />
-        <Card.Title
-          title="Long Pressable City"
-          left={props => <Avatar.Icon {...props} icon="city" />}
-        />
-        <Card.Content>
-          <Paragraph>
-            This is a long press only city. If you long press me, I will alert.
-          </Paragraph>
-        </Card.Content>
       </Card>
     </ScrollView>
   );
