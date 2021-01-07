@@ -17,6 +17,7 @@ const DefaultTheme: Theme = {
     onBackground: '#000000',
     onSurface: '#000000',
     disabled: '#26000000',
+    destructive: '#800000	',
     placeholder: '#54000000',
     backdrop: '#50000000',
     notification: 'ffc0cb'

@@ -2,15 +2,9 @@ import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { ScrollView, Image } from 'react-native';
 import { Button, List, useTheme } from 'react-native-paper';
+import DefaultTheme from '../../assets/styles/DefaultTheme'
 
-
-// TODO: Abstract Score Keeping
-// TODO: Learn Horizontal Screen Mode
-// TODO: Add BLue 
-// TODO: Button Styling Colro
-
-
-
+const destructive_color = DefaultTheme.colors.primary;
 
 class Counter extends React.Component {
   state = { redScore: 0, blueScore:0, redScoreHistory: [], blueScoreHistory:[] };
@@ -57,38 +51,38 @@ class Counter extends React.Component {
       <Text style={styles2.redscoreStyle}>Orange: {redScore}</Text>   
       <Text> {redScoreHistory} </Text>    
       <View style={styles.row}>   
-      <Button style={styles.button} onPress={ () => {this.incramentScoreRed(1)}} mode =               "contained">
+      <Button style={styles.button} onPress={ () => {this.incramentScoreRed(1)}} mode =               "outlined">
           +1
           </Button>
-          <Button style={styles.button} onPress={ () => {this.incramentScoreRed(5)}} mode =               "contained">
+          <Button style={styles.button} onPress={ () => {this.incramentScoreRed(5)}} mode =               "outlined">
           +5
           </Button>
-          <Button style={styles.button} onPress={ () => {this.incramentScoreRed(10)}} mode =               "contained">
+          <Button style={styles.button} onPress={ () => {this.incramentScoreRed(10)}} mode =               "outlined">
           +10
           </Button>
-           <Button style={styles.button} onPress={ () => {this.incramentScoreRed(20)}} mode =               "contained">
+           <Button style={styles.button} onPress={ () => {this.incramentScoreRed(20)}} mode =               "outlined">
           +20
           </Button>
-          <Button style={styles.button} onPress={ () => {this.incramentScoreRed(-1)}} mode =               "contained">
+          <Button style={styles.button} onPress={ () => {this.incramentScoreRed(-1)}} mode =               "outlined">
           -1
           </Button>
           </View>
           </List.Section>
            <Text style={styles2.blueScoreStyle}>Blue: {blueScore}</Text> 
            <View style={styles.row}>           
-           <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(1)}} mode =               "contained">
+           <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(1)}} mode =               "outlined">
           +1
           </Button>
-          <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(5)}} mode =               "contained">
+          <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(5)}} mode =               "outlined">
           +5
           </Button>
-          <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(10)}} mode =               "contained">
+          <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(10)}} mode =               "outlined">
           +10
           </Button>
-           <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(20)}} mode =               "contained">
+           <Button style={styles.button} onPress={ () => {this.incramentScoreBlue(20)}} mode =               "outlined">
           +20
           </Button>
-           <Button style={styles.button} onPress={ () => {this.incramentScoreRed(-1)}} mode =               "contained">
+           <Button style={styles.button} onPress={ () => {this.incramentScoreRed(-1)}} color={destructive_color} mode ="outlined">
           -1
           </Button>
           </View>
